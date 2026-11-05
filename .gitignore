@@ -1,0 +1,10 @@
+# Rahasia & lingkungan lokal
+.env
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+# Data rekaman sensor (hanya file contoh yang ikut repo). Model bawaan model/focus_rf.joblib SENGAJA ikut repo.
+data/*
+!data/sessions.sample.csv
+*.log
