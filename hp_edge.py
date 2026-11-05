@@ -52,7 +52,10 @@ class TermuxSensors:
                 if "accelerometer" in key and "uncalibrated" not in key and len(values) >= 3:
                     self.accel.append(tuple(float(v) for v in values[:3]))  # simpan x, y, z
                 elif "light" in key and values:
-                    self.lux = float(values[0])  # simpan lux
+            if len(values) > 7 and values[7] > 0:
+                self.lux = float(values[7])
+            else:
+                self.lux = float(values[0])  # simpan lux
 
     def pop_window(self):
         """Ambil semua sampel sejak pemanggilan terakhir, lalu kosongkan."""
